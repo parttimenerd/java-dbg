@@ -7,6 +7,11 @@ public class OnThrowAndJCmd {
         } catch (Ex e) {
             System.out.println("Caught");
         }
+        try {
+            throw new Ex("");
+        } catch (Ex e) {
+            System.out.println("Caught");
+        }
         for (int i = 0; i < 1000; i++) {
             System.out.print(i + " ");
             Thread.sleep(2000);

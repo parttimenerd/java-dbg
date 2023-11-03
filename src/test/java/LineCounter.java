@@ -2,11 +2,11 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class LineCounterFirstBug {
+public class LineCounter {
 
     // Count lines in a file
     public static void main(String[] args) throws IOException {
-        Path file = Path.of(args[0]);
+        Path file = Path.of(args[1]);
         int count = switch (args[0]) {
             case "lines" -> countLines(file);
             case "code_lines" -> countCodeLines(file);
@@ -17,7 +17,8 @@ public class LineCounterFirstBug {
                 yield 0;
             }
         };
-        System.out.println(count);
+        System.out.println("Counting " + args[0] +
+                " " + count);
     }
 
     public static int countLines(Path file) throws IOException {
